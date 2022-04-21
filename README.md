@@ -11,7 +11,7 @@ Student-led lecture on service-oriented architecure with immense focus on REST A
 
 ## Content Overview
 
-> Theory
+### THEORY
 
 - Architectural Paradigms : Service Oriented Architecture & Microservices vs Monolithics
 - APIs
@@ -19,9 +19,9 @@ Student-led lecture on service-oriented architecure with immense focus on REST A
 - SOAP vs REST
 - Basic Networking : HTTP(S), status codes, routes, urls etc
 
-> ACTIVITY I
+### ACTIVITY I
 
-### Building
+> Building
 
 - Database Structure
 - PHP & MySQL
@@ -30,18 +30,18 @@ Student-led lecture on service-oriented architecure with immense focus on REST A
 - Django & MySQL
 - Node & Firebase
 
-### Testing
+> Testing
 
 - Postman Intro
 - Explore Postman
 - Thorough Testing
 
-### Deployment
+> Deployment
 
 - Heroku Deployment
 - Firebase Deployment
 
-> ACTIVITY II
+### ACTIVITY II
 
 - Documenting APIs
 - Best Practices
