@@ -31,9 +31,7 @@ A TODO api created with node/express and mongodb
 
 ## Packages & Setup
 
-```js
-npm init -y
-npm i express
-npm i --save-dev nodemon
-npm i --save-dev dotenv
-```
+> npm init -y  
+> npm i express  
+> npm i --save-dev nodemon  
+> npm i --save-dev dotenv
