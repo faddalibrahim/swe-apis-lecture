@@ -19,15 +19,15 @@ A TODO api created with node/express and mongodb
 
 **PATCH**
 
-| route     | action                                  |
-| --------- | --------------------------------------- |
-| /todo/:id | update/patch todo with corresponding id |
+| route      | action                                  |
+| ---------- | --------------------------------------- |
+| /todos/:id | update/patch todo with corresponding id |
 
 **DELETE**
 
-| route     | action                            |
-| --------- | --------------------------------- |
-| /todo/:id | delete todo with corresponding id |
+| route      | action                            |
+| ---------- | --------------------------------- |
+| /todos/:id | delete todo with corresponding id |
 
 ## Packages & Setup
 
