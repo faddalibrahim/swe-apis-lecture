@@ -2,8 +2,6 @@ const { MongoClient } = require("mongodb");
 
 let dbConnection;
 
-console.log("this is the db");
-
 module.exports = {
   connectToDb: (cb) => {
     MongoClient.connect("mongodb://localhost:27017/bookstore")

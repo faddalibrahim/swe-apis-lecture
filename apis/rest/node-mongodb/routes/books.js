@@ -7,18 +7,18 @@ const router = express.Router();
 const { ObjectId } = require("mongodb");
 const { connectToDb, getDb } = require("../db_config/db");
 
+const COLLECTION_NAME = "books";
+
 let db;
 connectToDb((err) => {
   if (!err) db = getDb();
 });
 
-console.log(db);
-
 /* CREATE */
 // creating a todo
 router.post("/create", async (req, res) => {
   try {
-    const result = await db.collection("books").insertOne(req.body);
+    const result = await db.collection(COLLECTION_NAME).insertOne(req.body);
     res.status(201).json(result);
   } catch (err) {
     res.json(500).json({ error: "could not create a new doc" });
@@ -29,8 +29,8 @@ router.post("/create", async (req, res) => {
 // getting all todos
 router.get("/", async (req, res) => {
   try {
-    const all_todos = await db.collection("books").find().toArray();
-    res.status(200).json(all_todos);
+    const all_books = await db.collection(COLLECTION_NAME).find().toArray();
+    res.status(200).json(all_books);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -40,10 +40,10 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   if (ObjectId.isValid(req.params.id)) {
     try {
-      const todo = await db
-        .collection("books")
+      const book = await db
+        .collection(COLLECTION_NAME)
         .findOne({ _id: ObjectId(req.params.id) });
-      res.status(200).json(todo);
+      res.status(200).json(book);
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
@@ -51,12 +51,13 @@ router.get("/:id", async (req, res) => {
   res.status(400).json({ message: "invalid id" });
 });
 
+/* UPDATE */
 // updating a todo
 router.patch("/:id", async (req, res) => {
   if (ObjectId.isValid(req.params.id)) {
     try {
       const result = await db
-        .collection("books")
+        .collection(COLLECTION_NAME)
         .updateOne({ _id: ObjectId(req.params.id) }, { $set: req.body });
       res.status(200).json(result);
     } catch (err) {
@@ -66,12 +67,13 @@ router.patch("/:id", async (req, res) => {
   res.status(400).json({ message: "invalid id" });
 });
 
+/* DELETE */
 // deleting a todo
 router.delete("/:id", async (req, res) => {
   if (ObjectId.isValid(req.params.id)) {
     try {
       const result = await db
-        .collection("books")
+        .collection(COLLECTION_NAME)
         .deleteOne({ _id: ObjectId(req.params.id) });
       res.status(200).json(result);
     } catch (err) {
