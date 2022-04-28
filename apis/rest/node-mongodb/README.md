@@ -5,28 +5,18 @@ A TODO api created with node/express and mongodb
 ## Routes
 
 > **GET**  
-> /todos
+> /todos : fetch all todos
 >
-> - fetch all todos
->
-> /todos/:id
->
-> - fetch one todo with the correspong id
+> /todos/:id : fetch one todo with the correspong id
 >
 > **POST**  
-> /todos/create
->
-> - create a todo
+> /todos/create : create a todo
 >
 > **PATCH**  
-> /todo/:id
->
-> - update/patch todo with corresponding id
+> /todo/:id : update/patch todo with corresponding id
 >
 > **DELETE**
-> /todo/:id
->
-> - delete todo with corresponding id
+> /todo/:id : delete todo with corresponding id
 
 ## Packages & Setup
 
