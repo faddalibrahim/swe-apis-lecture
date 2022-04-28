@@ -2,11 +2,14 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
+// const { connectToDb, getDb } = require("./db_config/db");
 
 app.use(express.json());
 
-const todosRouter = require("./routes/todos");
+console.log("first");
+
+const todosRouter = require("./routes/todoss");
+
 app.use("/todos", todosRouter);
 
 app.listen(process.env.PORT, () =>
