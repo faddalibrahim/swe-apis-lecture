@@ -6,28 +6,29 @@ A TODO api created with python/django and sqlite3db
 
 **GET**
 
-| route      | action                                |
-| ---------- | ------------------------------------- |
-| /todos     | fetch all todos                       |
-| /todos/:id | fetch one todo with the correspong id |
+| route          | action                                |
+| -------------- | ------------------------------------- |
+| /task-list/    | fetch all todos                       |
+
 
 **POST**
 
 | route         | action        |
 | ------------- | ------------- |
-| /todos/create | create a todo |
+| /task-create/ | create a todo |
 
 **PATCH**
 
-| route      | action                                  |
-| ---------- | --------------------------------------- |
-| /todos/:id | update/patch todo with corresponding id |
+| route                 | action                                 |
+| --------------------- | ---------------------------------------|
+| /task-update/<str:pk>/| update/patch todo with corresponding id|
 
 **DELETE**
 
-| route      | action                            |
-| ---------- | --------------------------------- |
-| /todos/:id | delete todo with corresponding id |
+| route                  | action                            |
+| ---------------------- | ----------------------------------|
+| /task-delete/<str:pk>/ | delete todo with corresponding id |
+
 
 
 ## Packages & Setup
