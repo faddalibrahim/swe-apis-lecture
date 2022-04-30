@@ -2,12 +2,10 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
 
 app.use(express.json());
-
-const todosRouter = require("./routes/todos");
-app.use("/todos", todosRouter);
+const booksRouter = require("./routes/books");
+app.use("/books", booksRouter);
 
 app.listen(process.env.PORT, () =>
   console.log(`its alive on http://localhost:${process.env.PORT}`)

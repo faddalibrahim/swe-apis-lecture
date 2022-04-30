@@ -1,5 +1,5 @@
 /**
- * With Mongoose
+ * Testing the Routes with dummy data
  */
 
 const express = require("express");
@@ -8,28 +8,26 @@ const Todo = require("../models/todo");
 
 /* CREATE */
 // creating a todo
-router.post("/create", async (req, res) => {
-  const todo = new Todo({
-    action: req.body.action,
-  });
+router.post("/create", (req, res) => {
+  if (!req.body.action)
+    res.status(400).send({ ok: false, message: "no action sent" });
 
-  try {
-    const newTodo = await todo.save();
-    res.status(201).json(newTodo);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
+  res.status(200).send({
+    ok: true,
+    message: `the todo ${req.body.action} successfully created`,
+  });
 });
 
 /* READ */
 // getting all todos
-router.get("/", async (req, res) => {
-  try {
-    const all_todos = await Todo.find();
-    res.status(200).json(all_todos);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
+router.get("/", (req, res) => {
+  res.status(200).send({
+    ok: true,
+    todos: [
+      { id: 1, action: "eat", status: "pending" },
+      { id: 2, action: "code", status: "done" },
+    ],
+  });
 });
 
 // getting one todo
